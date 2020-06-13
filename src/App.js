@@ -8,12 +8,18 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetch()
+    fetch('http://api.open-notify.org/astros.json')
+    .then(response => response.json())
+    .then(({ people }) => this.setState({ peopleInSpace: people }))
   }
+  
   render() {
-    return ;
+    return (
+      <div>
+      {this.state.peopleInSpace.map((person, id) => <h1 hey={id}>{person.name}</h1>)}
+      )
   }
   
 }
 
-ReactDOM.render(document.getElementById('app'));
+export default App
