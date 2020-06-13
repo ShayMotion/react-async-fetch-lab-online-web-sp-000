@@ -1,8 +1,15 @@
 // create your App component here
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, {Component} from 'react';
 
-class App extends React.Component {
+class App extends Component {
+  
+  state = {
+    peopleInSpace: []
+  }
+  
+  componentDidMount() {
+    fetch()
+  }
   render() {
     return ;
   }
